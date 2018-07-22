@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Train Scheduler</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+   
+
+
+
+   <div class="jumbotron jumbotron-fluid my-jumbotron">
+      <div class="container">
+         <h1 class="display-4">Train Scheduler</h1>
+         <p class="lead">Add, edit, or delete trains</p>
+      </div>
+   </div>
+
+
+   <div class="container">
+      <div class="row">
+         <div class="col-md-3 col-sm-12 mycol" id="add-train">
+
+            <div class="card">
+               <div class="card-body">
+                  <form>
+                     <div class="form-group">
+                        <label for="train-name">Train Name</label>
+                        <input type="text" class="form-control" id="train-name" placeholder="Broadway Bullet">
+                     </div>
+                     <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" class="form-control" id="destination" placeholder="Morrisville">
+                     </div>
+                     <div class="form-group">
+                        <label for="first-train-time">First Train Time (HH:mm - military time)</label>
+                        <input type="text" class="form-control" id="first-train-time" placeholder="13:30">
+                     </div>
+                     <div class="form-group">
+                        <label for="frequency">Frequency (min)</label>
+                        <input type="text" class="form-control" id="frequency" placeholder="25">
+                     </div>
+                     
+                     <a href="#" class="btn btn-primary" id="add-train">Add Train</a>
+
+                  </form>
+                
+               </div>
+            </div>
+
+
+
+
+
+         </div>
+         <div class="col-md-9 col-sm-12 mycol" id="display-trains">
+            <table class="table table-striped">
+               <thead>
+                  <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">Train Name</th>
+                     <th scope="col">Destination</th>
+                     <th scope="col">Frequency (min)</th>
+                     <th scope="col">Next Arrival</th>
+                     <th scope="col">Minutes Away</th>
+                     <th scope="col">&nbsp;</th>
+                  </tr>
+               </thead>
+               <tbody id="train-list">
+                
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+
+
+
+   <div id="my-modal" class="modal">
+
+         <!-- Modal content -->
+         <div class="modal-content">
+           <span class="close" id="close-modal">&times;</span>
+           <form>
+               <div class="form-group">
+                  <label for="train-name">Train Name</label>
+                  <input type="text" class="form-control" id="train-name-edit" placeholder="Broadway Bullet">
+               </div>
+               <div class="form-group">
+                  <label for="destination">Destination</label>
+                  <input type="text" class="form-control" id="destination-edit" placeholder="Morrisville">
+               </div>
+               <div class="form-group">
+                  <label for="first-train-time">First Train Time (HH:mm - military time)</label>
+                  <input type="text" class="form-control" id="first-train-time-edit" placeholder="13:30">
+               </div>
+               <div class="form-group">
+                  <label for="frequency">Frequency (min)</label>
+                  <input type="text" class="form-control" id="frequency-edit" placeholder="25">
+               </div>
+               
+               <a href="#" class="btn btn-primary" id="update-train">Update</a>
+
+            </form>
+         </div>
+       
+       </div>
+
+   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+   <script type="text/javascript" src="assets/javascript/train.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+</body>
+
+</html>
